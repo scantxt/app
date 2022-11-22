@@ -1,0 +1,11 @@
+{
+  "info": "https://www.scantxt.org",
+  "contacts": [
+    "mailto:scantxt.app-scanner@olliejc.uk"
+  ],
+  "type": [
+    "banner_passive",
+    "crawler_passive",
+    "configuration_passive"
+  ]
+}
