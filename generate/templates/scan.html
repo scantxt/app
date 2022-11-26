@@ -1,0 +1,115 @@
+{% extends "_primary.html" %}
+
+{% block content %}
+  <h1>scan generator</h1>
+  <div>
+  {%- for record in records %}
+    <p>
+      v=SCAN1; 
+      {%- for k in record %}
+        {%- set value = record[k] %}
+        {%- if value %}
+        {{ k }}={{ value }};
+        {%- endif %}
+      {%- endfor %}
+    </p>
+  {%- endfor %}
+  </div>
+  <div>
+    <form action="/scan" method="post">
+      <input type="hidden" name="csrf_form" value="{{ csrf_form }}"/>
+      <div>
+        <label for="inc">Include scan records</label>
+        <input type="text" id="inc" name="inc">
+      </div>
+      <div>
+        <label for="pr">Priority</label>
+        <input type="text" id="pr" name="pr" value="0">
+      </div>
+      <div>
+        <label for="p">Policy</label>
+        <select id="p" name="p">
+          <option value="allow" selected>allow</option>
+          <option value="disallow">disallow</option>
+        </select> 
+      </div>
+      <div>
+        <label for="sp">Subdomain Policy</label>
+        <select id="sp" name="sp">
+          <option value="allow" selected>allow</option>
+          <option value="disallow">disallow</option>
+        </select> 
+      </div>
+      <div>
+        <label for="so">Scan options</label>
+        <select id="so" name="so">
+          <option value="passive" selected>passive</option>
+          <option value="active">active</option>
+        </select> 
+      </div>
+      <div>
+        <label for="po">Ports and protocols</label>
+        <input type="text" id="po" name="po">
+      </div>
+      <div>
+        <label for="src">Source scanners</label>
+        <input type="text" id="src" name="src">
+      </div>
+      <div>
+        <label for="sbd">Subdomains</label>
+        <input type="text" id="sbd" name="sbd">
+      </div>
+      <div>
+        <label for="ruh">Reporting URIs for humans</label>
+        <input type="text" id="ruh" name="ruh">
+      </div>
+      <div>
+        <label for="rua">Reporting URIs for aggregate scan statistics or results</label>
+        <input type="text" id="rua" name="rua">
+      </div>
+      <div>
+        <label for="ruf">Reporting URIs for detailed reports</label>
+        <input type="text" id="ruf" name="ruf">
+      </div>
+      <div>
+        <label for="ri">Reporting interval for aggregate reports</label>
+        <input type="text" id="ri" name="ri">
+      </div>
+      <div>
+        <label for="rf">Reporting format for rua and ruf</label>
+        <select id="rf" name="rf">
+          <option value="json" selected>json</option>
+          <option value="xml">xml</option>
+        </select> 
+      </div>
+      <div>
+        <label for="vf">Verification hash</label>
+        <input type="text" id="vf" name="vf">
+      </div>
+      <div>
+        <label for="alt">Alternative domain</label>
+        <input type="text" id="alt" name="alt">
+      </div>
+      <div>
+        <label for="nbf">Not before time</label>
+        <input type="text" id="nbf" name="nbf">
+      </div>
+      <div>
+        <label for="exp">Expiry time</label>
+        <input type="text" id="exp" name="exp">
+      </div>
+      <div>
+        <label for="rqs">Require scanning signature</label>
+        <select id="rqs" name="rqs">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select> 
+      </div>
+      <div>
+        <label for="esa">Expected signature attribute</label>
+        <input type="text" id="esa" name="esa">
+      </div>
+      <button type="submit" value="Submit">Submit</button>
+    </form> 
+  </div>
+{% endblock %}
