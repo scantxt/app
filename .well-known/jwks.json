@@ -2,8 +2,8 @@
   "keys": [
     {
       "kty": "EC",
-      "kid" : "efabd92a",
-      "use" : "sig",
+      "kid": "efabd92a",
+      "use": "sig",
       "crv": "P-256",
       "d": "yiV9-2h5mqn1l44rJ2pfPByuIEsCGsxBRI5MzUCWOKE",
       "x": "4PHpBpObwUcW7CXJtgNxH5sHdvXcyh67Lnp4U4LZrDQ",
