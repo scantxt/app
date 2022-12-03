@@ -11,7 +11,9 @@
     "hash",
     "none"
   ],
-  "puk": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4PHpBpObwUcW7CXJtgNxH5sHdvXcyh67Lnp4U4LZrDSYIokiA2D6XVo8qAmphaP3rlpQ5HUWFWIOsZEb0S9Kyw",
+  "puk": {
+    "efabd92a": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4PHpBpObwUcW7CXJtgNxH5sHdvXcyh67Lnp4U4LZrDSYIokiA2D6XVo8qAmphaP3rlpQ5HUWFWIOsZEb0S9Kyw"
+  },
   "jku": "https://www.scantxt.app/.well-known/jwks.json",
   "esa": "http_header:X-Scanner-Token",
   "lut": "2022-11-27T11:36:00Z"
